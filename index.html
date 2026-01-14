@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rafanis Service </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <img src="logo.jpeg" alt="Rafanis Service" class="logo">
+
+  <h1>Rafanis Service</h1>
+
+  <div class="actions">
+    <a class="btn primary" href="tel:+33780818301">📞 07 80 81 83 01</a>
+    <a class="btn outline"
+       href="https://www.google.com/maps?q=16+Rue+de+Tourcoing+59100+Roubaix"
+       target="_blank">
+      📍 Itinéraire
+    </a>
+  </div>
+
+  <a class="email" href="mailto:Rafanis59r@gmail.com">
+    ✉️ Rafanis59r@gmail.com
+  </a>
+  <!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service,%20j’ai%20une%20question."
+   class="whatsapp-btn"
+   target="_blank"
+   aria-label="Contacter sur WhatsApp">
+  💬 WhatsApp
+</a>
+
+</header>
+
+<main>
+
+<section class="card">
+  <h2>Services</h2>
+  <ul>
+    <li>Démarches administratives</li>
+    <li>Photocopie & impression</li>
+    <li>Accès Internet</li>
+    <li>Vente & réparation téléphones</li>
+    <li>Cartes SIM prépayées</li>
+    <li>Dépôt et retrait de colis</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Horaires</h2>
+  <p>
+    Lundi : 13h30 – 19h30<br>
+    Mardi à Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
+    Dimanche : Fermé
+  </p>
+</section>
+
+<section class="card">
+  <h2>Localisation</h2>
+  <iframe
+    src="https://maps.google.com/maps?q=16%20Rue%20de%20Tourcoing%2059100%20Roubaix&z=15&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+
+<section class="card">
+  <h2>Avis clients</h2>
+  <p style="text-align:center; margin-bottom:20px;">
+    Consultez les avis clients certifiés sur Google
+  </p>
+  <div style="text-align:center;">
+    <a class="btn primary"
+       href="https://www.google.com/search?q=Rafanis+Service+Roubaix+avis"
+       target="_blank">
+      ⭐ Voir les avis Google
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Rafanis Service — 16 Rue de Tourcoing, 59100 Roubaix
+</footer>
+
+<button class="contact-btn" onclick="openContact()">Nous contacter</button>
+
+<!-- MODAL CONTACT -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeContact()">×</span>
+
+    <h2>Nous contacter</h2>
+
+    <!-- FORMULAIRE FORMSPREE -->
+    <form action="https://formspree.io/f/xaqqneve" method="POST">
+      <input type="text" name="prenom" placeholder="Votre prénom" required>
+      <input type="email" name="email" placeholder="Votre adresse email" required>
+      <textarea name="message" placeholder="Votre message" required></textarea>
+
+      <!-- anti spam -->
+      <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit">Envoyer</button>
+    </form>
+
+    <p class="form-info">📨 Message envoyé directement à Rafanis59r@gmail.com</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -28,7 +28,39 @@
 }
 
 @keyframes blink {
+  /* ===== PANNEAU OUVERT / FERME (ENSEIGNE) ===== */
+.status-panel {
+  margin: 10px 0 25px;
+  padding: 14px 40px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  animation: pulsePanel 1.6s infinite;
+}
+
+/* OUVERT */
+.status-panel.open {
+  background: linear-gradient(135deg, #00ff7f, #00c853);
+  color: #003d1f;
+  box-shadow: 0 0 35px rgba(0, 255, 140, 0.9);
+}
+
+/* FERME */
+.status-panel.closed {
+  background: linear-gradient(135deg, #ff4b4b, #c62828);
+  color: #3d0000;
+  box-shadow: 0 0 35px rgba(255, 80, 80, 0.9);
+}
+
+@keyframes pulsePanel {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
   0% { opacity: 1; }
   50% { opacity: 0.4; }
   100% { opacity: 1; }
 }
+

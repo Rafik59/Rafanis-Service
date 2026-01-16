@@ -100,6 +100,11 @@ body {
   border-radius: 22px;
   background: rgba(255,255,255,0.07);
   backdrop-filter: blur(14px);
+
+  /* 🔥 FIX IMPORTANT */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card h2 {
@@ -108,11 +113,15 @@ body {
   color: #6ecbff;
 }
 
-/* ================= SERVICES (CENTRÉ PC + MOBILE) ================= */
+/* ================= SERVICES ================= */
 .card ul {
-  list-style: none;          /* SUPPRESSION DES PUCES */
+  list-style: none;          /* enlève les points */
   padding: 0;
   margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* 🔥 centrage réel */
 }
 
 .card ul li {
@@ -121,16 +130,12 @@ body {
   padding: 10px 0;
 }
 
-/* ================= HORAIRES (FIX DÉFINITIF) ================= */
+/* ================= HORAIRES (FIX FINAL) ================= */
 .card p {
-  text-align: center;        /* CENTRAGE TOTAL */
+  max-width: 520px;          /* empêche l’étirement PC */
+  text-align: center;
   line-height: 1.9;
   font-size: 17px;
-}
-
-.card p strong {
-  display: inline-block;
-  text-align: center;
 }
 
 /* ================= MAP ================= */

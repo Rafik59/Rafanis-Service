@@ -26,9 +26,9 @@ function checkOpenStatus() {
   if (day === 5) open = (time >= 9.5 && time <= 12) || (time >= 14 && time <= 19.5);
   if (day === 6) open = (time >= 9.5 && time <= 12) || (time >= 13.5 && time <= 19.5);
 
-  const panel = document.getElementById("status");
-  panel.className = "status-bar " + (open ? "open" : "closed");
-  panel.querySelector(".label").textContent = open ? "Ouvert" : "Fermé";
+  const status = document.getElementById("status");
+  status.className = "status-bar " + (open ? "open" : "closed");
+  status.querySelector(".label").textContent = open ? "Ouvert" : "Fermé";
 }
 
 checkOpenStatus();

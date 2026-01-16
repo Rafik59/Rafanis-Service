@@ -1,156 +1,327 @@
-/* ===== PANNEAU OUVERT / FERME ===== */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 25px;
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.status-badge .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  animation: blink 1.6s infinite;
+/* ================= GLOBAL ================= */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #0e4fa3, #020814);
+  color: #eaf3ff;
+  min-height: 100vh;
 }
 
-.status-badge.open {
-  background: rgba(0, 200, 0, 0.25);
-  color: #7CFF7C;
-}
-
-.status-badge.closed {
-  background: rgba(200, 0, 0, 0.25);
-  color: #FF9A9A;
-}
-
-@keyframes blink {
-  /* ===== PANNEAU OUVERT / FERME (ENSEIGNE) ===== */
-.status-panel {
-  margin: 10px 0 25px;
-  padding: 14px 40px;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 1px;
-  animation: pulsePanel 1.6s infinite;
-}
-
-/* OUVERT */
-.status-panel.open {
-  background: linear-gradient(135deg, #00ff7f, #00c853);
-  color: #003d1f;
-  box-shadow: 0 0 35px rgba(0, 255, 140, 0.9);
-}
-
-/* FERME */
-.status-panel.closed {
-  background: linear-gradient(135deg, #ff4b4b, #c62828);
-  color: #3d0000;
-  box-shadow: 0 0 35px rgba(255, 80, 80, 0.9);
-}
-
-@keyframes pulsePanel {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-  0% { opacity: 1; }
-/* ===== ENSEIGNE LUMINEUSE OUVERT / FERME ===== */
-.store-panel {
-  width: 260px;
-  margin: 10px auto 30px;
-  padding: 16px 0;
-  border-radius: 10px;
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
   text-align: center;
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  animation: glow 1.4s infinite alternate;
+  padding: clamp(60px, 10vh, 100px) 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 140, 255, 0.35),
+    rgba(0, 0, 0, 0)
+  );
 }
 
-/* OUVERT */
-.store-panel.open {
-  background: linear-gradient(135deg, #00ff6a, #00c853);
-  color: #003d1f;
+/* ================= LOGO ================= */
+.logo {
+  width: clamp(180px, 45vw, 260px);
+  height: clamp(180px, 45vw, 260px);
+  margin-bottom: 35px;
+  padding: 20px;
+  border-radius: 50%;
+  background: #070f1f;
+  object-fit: contain;
   box-shadow:
-    0 0 15px rgba(0,255,120,0.9),
-    0 0 40px rgba(0,255,120,0.8);
+    0 0 40px rgba(0,160,255,1),
+    0 0 90px rgba(0,160,255,0.7);
+  transition: transform 0.4s ease;
 }
 
-/* FERME */
-.store-panel.closed {
-  background: linear-gradient(135deg, #ff3b3b, #c62828);
-  color: #3d0000;
-  box-shadow:
-    0 0 15px rgba(255,60,60,0.9),
-    0 0 40px rgba(255,60,60,0.8);
+.logo:hover {
+  transform: scale(1.05);
 }
 
-@keyframes glow {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
+/* ================= TITRE ================= */
+.hero h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-/* ===== PANNEAU STYLE BARRE LUMINEUSE ===== */
-.open-panel {
+/* ================= PANNEAU OUVERT / FERME ================= */
+.status-bar {
+  max-width: 360px;
   width: 100%;
-  max-width: 420px;
-  margin: 10px auto 30px;
-  padding: 14px 22px;
+  margin: 6px auto 28px;
+  padding: 12px 20px;
   border-radius: 999px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 700;
-  font-size: 16px;
-  animation: pulseGlow 1.6s infinite;
+  font-size: 15px;
+  animation: pulseStatus 1.6s infinite;
 }
 
-/* POINT LUMINEUX */
-.open-panel .dot {
-  width: 12px;
-  height: 12px;
+/* point lumineux */
+.status-bar .dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
-/* OUVERT */
-.open-panel.open {
+/* ouvert */
+.status-bar.open {
   background: linear-gradient(90deg, #0f5132, #00ff7f);
-  color: #caffdf;
-  box-shadow: 0 0 35px rgba(0, 255, 140, 0.9);
+  color: #d6ffe9;
+  box-shadow: 0 0 25px rgba(0,255,140,0.8);
 }
 
-.open-panel.open .dot {
+.status-bar.open .dot {
   background: #2cff9a;
-  box-shadow: 0 0 12px #2cff9a;
+  box-shadow: 0 0 10px #2cff9a;
 }
 
-/* FERME */
-.open-panel.closed {
+/* fermé */
+.status-bar.closed {
   background: linear-gradient(90deg, #5f1a1a, #ff4b4b);
-  color: #ffd6d6;
-  box-shadow: 0 0 35px rgba(255, 80, 80, 0.9);
+  color: #ffe1e1;
+  box-shadow: 0 0 25px rgba(255,80,80,0.8);
 }
 
-.open-panel.closed .dot {
+.status-bar.closed .dot {
   background: #ff5a5a;
-  box-shadow: 0 0 12px #ff5a5a;
+  box-shadow: 0 0 10px #ff5a5a;
 }
 
-@keyframes pulseGlow {
+@keyframes pulseStatus {
   0% { opacity: 0.85; }
   50% { opacity: 1; }
   100% { opacity: 0.85; }
 }
 
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 18px;
+}
 
+/* ================= BOUTONS ================= */
+.btn {
+  padding: 15px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
 
+.btn.primary {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #00182f;
+  box-shadow: 0 0 30px rgba(0,160,255,0.8);
+}
+
+.btn.outline {
+  border: 1.5px solid #00b4ff;
+  color: #aee2ff;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* ================= EMAIL ================= */
+.email {
+  margin-top: 15px;
+  color: #aee2ff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* ================= MAIN ================= */
+main {
+  padding: 30px 15px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  width: min(92%, 960px);
+  margin: 40px auto;
+  padding: clamp(25px, 4vw, 40px);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 45px rgba(0,120,255,0.25);
+}
+
+.card h2 {
+  text-align: center;
+  color: #6ecbff;
+  margin-bottom: 25px;
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+/* ================= LISTES ================= */
+.card ul {
+  list-style: none;
+  text-align: center;
+}
+
+.card ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  font-size: 16px;
+}
+
+.card ul li:last-child {
+  border-bottom: none;
+}
+
+/* ================= TEXTE ================= */
+.card p {
+  text-align: center;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ================= MAP ================= */
+iframe {
+  width: 100%;
+  height: clamp(260px, 40vw, 340px);
+  border-radius: 18px;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 14px;
+  color: #8fbbe6;
+}
+
+/* ================= CONTACT ================= */
+.contact-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #00182f;
+  border: none;
+  padding: 15px 26px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0,160,255,0.8);
+  z-index: 1000;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #070f1f;
+  width: min(90%, 420px);
+  margin: 12vh auto;
+  padding: 28px;
+  border-radius: 22px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,160,255,0.5);
+}
+
+.modal-content h2 {
+  color: #6ecbff;
+  margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+}
+
+.modal-content textarea {
+  height: 110px;
+  resize: none;
+}
+
+.modal-content button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 14px 26px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0,160,255,0.8);
+}
+
+/* ================= CLOSE ================= */
+.close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  padding: 14px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #002b18;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+  z-index: 1000;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(37, 211, 102, 0.9);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .contact-btn {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .whatsapp-btn {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}

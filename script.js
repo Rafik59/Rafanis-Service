@@ -11,7 +11,7 @@ window.addEventListener("click", function (e) {
   if (e.target === modal) closeContact();
 });
 
-/* ===== PANNEAU OUVERT / FERME ===== */
+/* ===== ENSEIGNE OUVERT / FERME ===== */
 function checkOpenStatus() {
   const now = new Date();
   const day = now.getDay();
@@ -30,11 +30,11 @@ function checkOpenStatus() {
   const panel = document.getElementById("status");
 
   if (open) {
-    panel.className = "status-panel open";
-    panel.textContent = "🟢 OUVERT";
+    panel.className = "store-panel open";
+    panel.innerHTML = "<span>OUVERT</span>";
   } else {
-    panel.className = "status-panel closed";
-    panel.textContent = "🔴 FERMÉ";
+    panel.className = "store-panel closed";
+    panel.innerHTML = "<span>FERMÉ</span>";
   }
 }
 

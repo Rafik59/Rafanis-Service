@@ -17,7 +17,7 @@
   <!-- PANNEAU OUVERT / FERME -->
   <div id="statusPanel" class="status-panel">
     <span class="dot"></span>
-    <span id="statusText">Chargement…</span>
+    <span id="statusText">Fermé</span>
   </div>
 
   <div class="actions">
@@ -31,12 +31,6 @@
 
   <a class="email" href="mailto:Rafanis59r@gmail.com">
     ✉️ Rafanis59r@gmail.com
-  </a>
-
-  <a href="https://wa.me/33780818301"
-     class="whatsapp-btn"
-     target="_blank">
-    💬 WhatsApp
   </a>
 </header>
 
@@ -96,13 +90,15 @@
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
-
     <h2>Nous contacter</h2>
 
     <form action="https://formspree.io/f/xaqqneve" method="POST">
       <input type="text" name="prenom" placeholder="Votre prénom" required>
       <input type="email" name="email" placeholder="Votre adresse email" required>
       <textarea name="message" placeholder="Votre message" required></textarea>
+
+      <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
+      <input type="hidden" name="_template" value="table">
 
       <button type="submit">Envoyer</button>
     </form>

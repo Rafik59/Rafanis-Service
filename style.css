@@ -55,16 +55,17 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== PANNEAU OUVERT / FERME ===== */
+/* PANNEAU OUVERT / FERME */
 .status-bar {
-  max-width: 380px;
+  max-width: 360px;
   width: 100%;
-  margin: 6px auto 28px;
-  padding: 12px 22px;
+  margin: 8px auto 28px;
+  padding: 14px 24px;
   border-radius: 999px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center; /* 🔧 CENTRAGE */
+  gap: 12px;
   font-weight: 700;
   font-size: 15px;
   animation: pulseStatus 1.6s infinite;
@@ -76,10 +77,9 @@ body {
   border-radius: 50%;
 }
 
-/* OUVERT */
 .status-bar.open {
   background: linear-gradient(90deg, #0f5132, #00ff7f);
-  color: #d6ffe9;
+  color: #eafff3;
   box-shadow: 0 0 25px rgba(0,255,140,0.8);
 }
 
@@ -88,10 +88,9 @@ body {
   box-shadow: 0 0 10px #2cff9a;
 }
 
-/* FERME */
 .status-bar.closed {
   background: linear-gradient(90deg, #5f1a1a, #ff4b4b);
-  color: #ffe1e1;
+  color: #ffecec;
   box-shadow: 0 0 25px rgba(255,80,80,0.8);
 }
 
@@ -186,3 +185,4 @@ footer {
   box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
   z-index: 1000;
 }
+

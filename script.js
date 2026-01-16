@@ -13,22 +13,39 @@ window.addEventListener("click", function (e) {
   }
 });
 
-/* OUVERT / FERME */
+/* ===== OUVERT / FERME ===== */
 function checkOpenStatus() {
   const now = new Date();
-  const day = now.getDay();
-  const time = now.getHours() + now.getMinutes() / 60;
+  const day = now.getDay(); // 0 = dimanche
+  const time = now.getHours() * 60 + now.getMinutes();
 
   let open = false;
 
-  if (day === 1) open = time >= 13.5 && time <= 19.5;
-  if (day >= 2 && day <= 4) open = (time >= 9.5 && time <= 12) || (time >= 13.5 && time <= 19.5);
-  if (day === 5) open = (time >= 9.5 && time <= 12) || (time >= 14 && time <= 19.5);
-  if (day === 6) open = (time >= 9.5 && time <= 12) || (time >= 13.5 && time <= 19.5);
+  const ranges = {
+    1: [[810, 1170]], // lundi
+    2: [[570, 720], [810, 1170]],
+    3: [[570, 720], [810, 1170]],
+    4: [[570, 720], [810, 1170]],
+    5: [[570, 720], [840, 1170]], // vendredi corrigé
+    6: [[570, 720], [810, 1170]]
+  };
 
-  const status = document.getElementById("status");
-  status.className = "status-bar " + (open ? "open" : "closed");
-  status.querySelector(".label").textContent = open ? "Ouvert" : "Fermé";
+  if (ranges[day]) {
+    open = ranges[day].some(r => time >= r[0] && time <= r[1]);
+  }
+
+  const panel = document.getElementById("statusPanel");
+  const text = document.getElementById("statusText");
+
+  if (open) {
+    panel.classList.add("open");
+    panel.classList.remove("closed");
+    text.textContent = "Ouvert";
+  } else {
+    panel.classList.add("closed");
+    panel.classList.remove("open");
+    text.textContent = "Fermé";
+  }
 }
 
 checkOpenStatus();

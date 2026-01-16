@@ -14,7 +14,7 @@
 
   <h1>Rafanis Service</h1>
 
-  <!-- PANNEAU OUVERT / FERME (SOUS LE TITRE) -->
+  <!-- STATUT OUVERT / FERME -->
   <div id="status" class="status-badge closed">
     <span class="dot"></span>
     <span class="text">Fermé</span>
@@ -34,7 +34,7 @@
   </a>
 </header>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP BUTTON -->
 <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service,%20j’ai%20une%20question."
    class="whatsapp-btn"
    target="_blank">
@@ -76,6 +76,9 @@
 
 <section class="card">
   <h2>Avis clients</h2>
+  <p style="text-align:center; margin-bottom:20px;">
+    Consultez les avis clients certifiés sur Google
+  </p>
   <div style="text-align:center;">
     <a class="btn primary"
        href="https://www.google.com/search?q=Rafanis+Service+Roubaix+avis"
@@ -93,7 +96,7 @@
 
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
-<!-- MODAL CONTACT -->
+<!-- MODAL CONTACT (ORIGINAL) -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
@@ -101,15 +104,19 @@
 
     <form action="https://formspree.io/f/xaqqneve" method="POST">
       <input type="text" name="prenom" placeholder="Votre prénom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
+      <input type="email" name="email" placeholder="Votre adresse email" required>
       <textarea name="message" placeholder="Votre message" required></textarea>
+
       <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
+      <input type="hidden" name="_template" value="table">
+
       <button type="submit">Envoyer</button>
     </form>
+
+    <p class="form-info">📨 Message envoyé directement à Rafanis59r@gmail.com</p>
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-

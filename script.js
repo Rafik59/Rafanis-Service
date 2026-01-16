@@ -13,10 +13,12 @@ window.addEventListener("click", function (e) {
   }
 });
 
+/* OUVERT / FERME */
 function checkOpenStatus() {
   const now = new Date();
   const day = now.getDay();
   const time = now.getHours() + now.getMinutes() / 60;
+
   let open = false;
 
   if (day === 1) open = time >= 13.5 && time <= 19.5;

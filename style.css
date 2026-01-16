@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* GLOBAL */
+/* BODY */
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top, #0e4fa3, #020814);
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
   min-height: 100vh;
   text-align: center;
@@ -23,7 +23,6 @@ body {
   align-items: center;
 }
 
-/* LOGO */
 .logo {
   width: 220px;
   height: 220px;
@@ -39,14 +38,13 @@ body {
   margin-bottom: 15px;
 }
 
-/* ================= STATUS ================= */
+/* STATUS */
 .status {
   margin-bottom: 25px;
   padding: 12px 34px;
   border-radius: 50px;
   font-weight: bold;
   min-width: 200px;
-  text-align: center;
 }
 
 .status.open {
@@ -75,13 +73,11 @@ body {
   100% { box-shadow: 0 0 15px #ff4b4b; }
 }
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 .actions {
   display: flex;
   gap: 15px;
   margin-bottom: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .btn {
@@ -105,10 +101,9 @@ body {
 .email {
   margin-top: 10px;
   color: #aee2ff;
-  text-decoration: none;
 }
 
-/* ================= CARDS ================= */
+/* CARDS */
 .card {
   width: min(92%, 900px);
   margin: 40px auto;
@@ -124,19 +119,16 @@ body {
   color: #6ecbff;
 }
 
-/* ✅ SERVICES : SANS PUCES + TEXTE CENTRÉ */
+/* SERVICES — TEXTE CENTRÉ SANS PUCES */
 .card ul {
-  list-style: none;
+  list-style: none;     /* supprime les points */
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
 .card ul li {
-  padding: 8px 0;
-  font-size: 16px;
-}
-
-/* TEXT CENTER */
-.center {
+  margin: 8px 0;
   text-align: center;
   line-height: 1.8;
 }
@@ -156,7 +148,7 @@ footer {
   color: #8fbbe6;
 }
 
-/* ================= FIXED BUTTONS ================= */
+/* CONTACT BUTTON */
 .contact-btn {
   position: fixed;
   bottom: 20px;
@@ -180,11 +172,10 @@ footer {
   padding: 14px 22px;
   border-radius: 30px;
   font-weight: bold;
-  z-index: 900;
-  text-decoration: none;
+  z-index: 1000;
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;

@@ -14,10 +14,9 @@
 
   <h1>Rafanis Service</h1>
 
-  <!-- PANNEAU OUVERT / FERMÉ -->
-  <div id="status-panel" class="status-panel">
-    <span class="status-dot"></span>
-    <span id="status-text">Chargement...</span>
+  <!-- PANNEAU OUVERT / FERME -->
+  <div id="statusBadge" class="status loading">
+    Vérification…
   </div>
 
   <div class="actions">
@@ -34,12 +33,12 @@
   </a>
 
   <!-- WHATSAPP -->
-  <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service,%20j’ai%20une%20question."
+  <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
      class="whatsapp-btn"
-     target="_blank"
-     aria-label="Contacter sur WhatsApp">
+     target="_blank">
     💬 WhatsApp
   </a>
+
 </header>
 
 <main>
@@ -58,7 +57,7 @@
 
 <section class="card">
   <h2>Horaires</h2>
-  <p>
+  <p class="center">
     Lundi : 13h30 – 19h30<br>
     Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
     <strong>Vendredi : 09h30 – 12h00 / 14h00 – 19h30</strong><br>
@@ -94,11 +93,10 @@
 
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
-<!-- MODAL CONTACT -->
+<!-- MODAL -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
-
     <h2>Nous contacter</h2>
 
     <form action="https://formspree.io/f/xaqqneve" method="POST">
@@ -107,8 +105,6 @@
       <textarea name="message" placeholder="Votre message" required></textarea>
 
       <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
-      <input type="hidden" name="_template" value="table">
-
       <button type="submit">Envoyer</button>
     </form>
 

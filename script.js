@@ -1,3 +1,4 @@
+// ===== MODAL CONTACT =====
 function openContact() {
   document.getElementById("contactModal").style.display = "block";
 }
@@ -13,37 +14,68 @@ window.addEventListener("click", function (e) {
   }
 });
 
-/* ===== OUVERT / FERME ===== */
-function updateStatus() {
-  const panel = document.getElementById("statusPanel");
-  const text = document.getElementById("statusText");
+// ===== PANNEAU OUVERT / FERMÉ =====
+document.addEventListener("DOMContentLoaded", function () {
+  const statusPanel = document.getElementById("status-panel");
+  const statusText = document.getElementById("status-text");
 
-  const now = new Date();
-  const day = now.getDay(); // 0 = dimanche
-  const time = now.getHours() * 60 + now.getMinutes();
+  if (!statusPanel || !statusText) return;
 
-  let open = false;
+  function isOpenNow() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = dimanche
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const time = hour * 60 + min;
 
-  if (day >= 1 && day <= 4) {
-    open = (time >= 570 && time <= 720) || (time >= 810 && time <= 1170);
+    // Fermé le dimanche
+    if (day === 0) return false;
+
+    // Lundi : 13h30 – 19h30
+    if (day === 1) {
+      return time >= 810 && time <= 1170;
+    }
+
+    // Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30
+    if (day >= 2 && day <= 4) {
+      return (
+        (time >= 570 && time <= 720) ||
+        (time >= 810 && time <= 1170)
+      );
+    }
+
+    // Vendredi : 09h30 – 12h00 / 14h00 – 19h30
+    if (day === 5) {
+      return (
+        (time >= 570 && time <= 720) ||
+        (time >= 840 && time <= 1170)
+      );
+    }
+
+    // Samedi : 09h30 – 12h00 / 13h30 – 19h30
+    if (day === 6) {
+      return (
+        (time >= 570 && time <= 720) ||
+        (time >= 810 && time <= 1170)
+      );
+    }
+
+    return false;
   }
-  if (day === 5) {
-    open = (time >= 570 && time <= 720) || (time >= 840 && time <= 1170);
-  }
-  if (day === 6) {
-    open = (time >= 570 && time <= 720) || (time >= 810 && time <= 1170);
+
+  function updateStatus() {
+    if (isOpenNow()) {
+      statusPanel.classList.remove("closed");
+      statusPanel.classList.add("open");
+      statusText.textContent = "Ouvert";
+    } else {
+      statusPanel.classList.remove("open");
+      statusPanel.classList.add("closed");
+      statusText.textContent = "Fermé";
+    }
   }
 
-  panel.classList.remove("open", "closed");
-
-  if (open) {
-    panel.classList.add("open");
-    text.textContent = "Ouvert";
-  } else {
-    panel.classList.add("closed");
-    text.textContent = "Fermé";
-  }
-}
-
-updateStatus();
-setInterval(updateStatus, 60000);
+  // Mise à jour immédiate + toutes les minutes
+  updateStatus();
+  setInterval(updateStatus, 60000);
+});

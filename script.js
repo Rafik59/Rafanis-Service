@@ -11,11 +11,10 @@ window.addEventListener("click", function (e) {
   if (e.target === modal) closeContact();
 });
 
-/* OUVERT / FERME */
 function checkStatus() {
   const badge = document.getElementById("statusBadge");
   const now = new Date();
-  const day = now.getDay(); // 0 dimanche
+  const day = now.getDay();
   const hour = now.getHours() + now.getMinutes() / 60;
 
   let open = false;
@@ -28,15 +27,8 @@ function checkStatus() {
     open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
   }
 
-  badge.classList.remove("loading", "open", "closed");
-
-  if (open) {
-    badge.classList.add("open");
-    badge.textContent = "🟢 Ouvert";
-  } else {
-    badge.classList.add("closed");
-    badge.textContent = "🔴 Fermé";
-  }
+  badge.className = "status " + (open ? "open" : "closed");
+  badge.textContent = open ? "🟢 Ouvert" : "🔴 Fermé";
 }
 
 checkStatus();

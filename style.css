@@ -1,11 +1,11 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= GLOBAL ================= */
+/* GLOBAL */
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top, #0e4fa3, #020814);
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
   min-height: 100vh;
   text-align: center;
@@ -29,7 +29,7 @@ body {
   );
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 .logo {
   width: clamp(180px, 45vw, 260px);
   height: clamp(180px, 45vw, 260px);
@@ -48,19 +48,19 @@ body {
   transform: scale(1.05);
 }
 
-/* ================= TITRE ================= */
+/* TITRE */
 .hero h1 {
   font-size: clamp(28px, 5vw, 42px);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
-/* ================= PANNEAU OUVERT / FERME ================= */
+/* ===== PANNEAU OUVERT / FERME ===== */
 .status-bar {
-  max-width: 360px;
+  max-width: 380px;
   width: 100%;
   margin: 6px auto 28px;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 999px;
   display: flex;
   align-items: center;
@@ -70,14 +70,13 @@ body {
   animation: pulseStatus 1.6s infinite;
 }
 
-/* point lumineux */
 .status-bar .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
 
-/* ouvert */
+/* OUVERT */
 .status-bar.open {
   background: linear-gradient(90deg, #0f5132, #00ff7f);
   color: #d6ffe9;
@@ -89,7 +88,7 @@ body {
   box-shadow: 0 0 10px #2cff9a;
 }
 
-/* fermé */
+/* FERME */
 .status-bar.closed {
   background: linear-gradient(90deg, #5f1a1a, #ff4b4b);
   color: #ffe1e1;
@@ -107,7 +106,7 @@ body {
   100% { opacity: 0.85; }
 }
 
-/* ================= ACTIONS ================= */
+/* ACTIONS */
 .actions {
   display: flex;
   gap: 18px;
@@ -116,7 +115,7 @@ body {
   margin-bottom: 18px;
 }
 
-/* ================= BOUTONS ================= */
+/* BOUTONS */
 .btn {
   padding: 15px 34px;
   border-radius: 50px;
@@ -141,7 +140,7 @@ body {
   transform: scale(1.08);
 }
 
-/* ================= EMAIL ================= */
+/* EMAIL */
 .email {
   margin-top: 15px;
   color: #aee2ff;
@@ -149,12 +148,12 @@ body {
   font-size: 15px;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 main {
   padding: 30px 15px;
 }
 
-/* ================= CARDS ================= */
+/* CARDS */
 .card {
   width: min(92%, 960px);
   margin: 40px auto;
@@ -165,45 +164,7 @@ main {
   box-shadow: 0 0 45px rgba(0,120,255,0.25);
 }
 
-.card h2 {
-  text-align: center;
-  color: #6ecbff;
-  margin-bottom: 25px;
-  font-size: clamp(20px, 4vw, 28px);
-}
-
-/* ================= LISTES ================= */
-.card ul {
-  list-style: none;
-  text-align: center;
-}
-
-.card ul li {
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.18);
-  font-size: 16px;
-}
-
-.card ul li:last-child {
-  border-bottom: none;
-}
-
-/* ================= TEXTE ================= */
-.card p {
-  text-align: center;
-  line-height: 1.8;
-  font-size: 16px;
-}
-
-/* ================= MAP ================= */
-iframe {
-  width: 100%;
-  height: clamp(260px, 40vw, 340px);
-  border-radius: 18px;
-  border: none;
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px 15px;
@@ -211,83 +172,7 @@ footer {
   color: #8fbbe6;
 }
 
-/* ================= CONTACT ================= */
-.contact-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #00182f;
-  border: none;
-  padding: 15px 26px;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 30px rgba(0,160,255,0.8);
-  z-index: 1000;
-}
-
-/* ================= MODAL ================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  z-index: 2000;
-}
-
-.modal-content {
-  background: #070f1f;
-  width: min(90%, 420px);
-  margin: 12vh auto;
-  padding: 28px;
-  border-radius: 22px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 0 40px rgba(0,160,255,0.5);
-}
-
-.modal-content h2 {
-  color: #6ecbff;
-  margin-bottom: 20px;
-}
-
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin-bottom: 14px;
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
-  font-size: 15px;
-}
-
-.modal-content textarea {
-  height: 110px;
-  resize: none;
-}
-
-.modal-content button {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  border: none;
-  padding: 14px 26px;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(0,160,255,0.8);
-}
-
-/* ================= CLOSE ================= */
-.close {
-  position: absolute;
-  right: 18px;
-  top: 14px;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-/* ================= WHATSAPP ================= */
+/* WHATSAPP */
 .whatsapp-btn {
   position: fixed;
   bottom: 90px;
@@ -300,28 +185,4 @@ footer {
   text-decoration: none;
   box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
   z-index: 1000;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 35px rgba(37, 211, 102, 0.9);
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 480px) {
-  .btn {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .contact-btn {
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .whatsapp-btn {
-    padding: 12px 18px;
-    font-size: 14px;
-  }
 }

@@ -10,75 +10,64 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top, #0e4fa3, #020814);
   color: #eaf3ff;
-  min-height: 100vh;
 }
 
 /* HERO */
 .hero {
   min-height: 100vh;
   text-align: center;
-  padding: clamp(60px, 10vh, 100px) 20px;
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 140, 255, 0.35),
-    rgba(0, 0, 0, 0)
-  );
 }
 
 /* LOGO */
 .logo {
-  width: clamp(180px, 45vw, 260px);
-  height: clamp(180px, 45vw, 260px);
-  margin-bottom: 35px;
-  padding: 20px;
+  width: 220px;
+  height: 220px;
+  margin-bottom: 30px;
   border-radius: 50%;
   background: #070f1f;
   object-fit: contain;
-  box-shadow: 0 0 40px rgba(0,160,255,1),
-              0 0 90px rgba(0,160,255,0.7);
+  box-shadow: 0 0 40px rgba(0,160,255,.8);
 }
 
 /* TITRE */
 .hero h1 {
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: 38px;
   margin-bottom: 10px;
 }
 
 /* PANNEAU */
 .status-bar {
-  max-width: 360px;
-  width: 100%;
-  margin: 8px auto 28px;
-  padding: 14px 24px;
+  width: 320px;
+  padding: 12px;
+  margin-bottom: 30px;
   border-radius: 999px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-weight: 700;
-  animation: pulse 1.6s infinite;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+.status-bar.open {
+  background: #1f8f4c;
+  color: #eafff3;
+}
+
+.status-bar.closed {
+  background: #9c2f2f;
+  color: #ffecec;
 }
 
 .status-bar .dot {
   width: 10px;
   height: 10px;
+  background: currentColor;
   border-radius: 50%;
-}
-
-.status-bar.open {
-  background: linear-gradient(90deg, #0f5132, #00ff7f);
-  color: #eafff3;
-  box-shadow: 0 0 25px rgba(0,255,140,0.8);
-}
-
-.status-bar.closed {
-  background: linear-gradient(90deg, #5f1a1a, #ff4b4b);
-  color: #ffecec;
-  box-shadow: 0 0 25px rgba(255,80,80,0.8);
 }
 
 @keyframes pulse {
@@ -90,35 +79,32 @@ body {
 /* ACTIONS */
 .actions {
   display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 18px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 /* BOUTONS */
 .btn {
-  padding: 15px 34px;
+  padding: 14px 30px;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: bold;
   text-decoration: none;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: #1fa2ff;
   color: #00182f;
 }
 
 .btn.outline {
-  border: 1.5px solid #00b4ff;
-  color: #aee2ff;
+  border: 2px solid #1fa2ff;
+  color: #cfeaff;
 }
 
 /* EMAIL */
 .email {
-  margin-top: 15px;
-  color: #aee2ff;
-  text-decoration: none;
+  margin-top: 10px;
+  color: #cfeaff;
 }
 
 /* MAIN */
@@ -128,32 +114,42 @@ main {
 
 /* CARDS */
 .card {
-  width: min(92%, 960px);
-  margin: 40px auto;
-  padding: 30px;
+  background: rgba(255,255,255,.08);
   border-radius: 22px;
-  background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(14px);
+  padding: 30px;
+  margin: 40px auto;
+  width: 95%;
+  max-width: 900px;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.center-text {
+  text-align: center;
+  line-height: 1.8;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px 15px;
-  color: #8fbbe6;
+  padding: 25px;
+  color: #9fc7ff;
 }
 
-/* CONTACT */
+/* CONTACT BUTTON */
 .contact-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  border: none;
-  padding: 15px 26px;
-  border-radius: 50px;
+  background: #1fa2ff;
+  color: #00182f;
   font-weight: bold;
-  cursor: pointer;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 50px;
 }
 
 /* MODAL */
@@ -161,16 +157,35 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,.75);
 }
 
 .modal-content {
   background: #070f1f;
-  width: min(90%, 420px);
-  margin: 12vh auto;
-  padding: 28px;
+  margin: 15vh auto;
+  padding: 30px;
   border-radius: 22px;
+  width: 90%;
+  max-width: 420px;
   text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.modal-content button {
+  background: #1fa2ff;
+  color: #00182f;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
 }
 
 /* WHATSAPP */
@@ -178,10 +193,9 @@ footer {
   position: fixed;
   bottom: 90px;
   right: 20px;
+  background: #25d366;
+  color: #003b1f;
   padding: 14px 22px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #002b18;
-  text-decoration: none;
   font-weight: bold;
 }

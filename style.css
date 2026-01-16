@@ -46,18 +46,17 @@ body {
   border-radius: 50px;
   font-weight: bold;
   min-width: 200px;
+  text-align: center;
 }
 
 .status.open {
   background: linear-gradient(135deg, #2aff7a, #00c853);
   color: #003b1d;
-  box-shadow: 0 0 25px rgba(42,255,122,0.9);
 }
 
 .status.closed {
   background: linear-gradient(135deg, #ff4b4b, #c62828);
   color: #fff;
-  box-shadow: 0 0 25px rgba(255,75,75,0.9);
 }
 
 /* ================= ACTIONS ================= */
@@ -109,30 +108,28 @@ body {
   color: #6ecbff;
 }
 
-/* ================= SERVICES (FIX TOTAL) ================= */
+/* ================= SERVICES (CENTRÉ PC + MOBILE) ================= */
 .card ul {
-  list-style: none;              /* SUPPRESSION DES PUCES */
+  list-style: none;          /* SUPPRESSION DES PUCES */
   padding: 0;
   margin: 0;
-  text-align: center;            /* CENTRAGE PC + MOBILE */
 }
 
 .card ul li {
-  padding: 10px 0;
-  font-size: 18px;
   text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
 }
 
-/* ================= HORAIRES (FIX TOTAL) ================= */
-.horaires,
-.horaires p {
-  text-align: center;            /* CENTRAGE PC + MOBILE */
+/* ================= HORAIRES (FIX DÉFINITIF) ================= */
+.card p {
+  text-align: center;        /* CENTRAGE TOTAL */
   line-height: 1.9;
   font-size: 17px;
 }
 
-.horaires strong {
-  display: block;
+.card p strong {
+  display: inline-block;
   text-align: center;
 }
 

@@ -11,35 +11,33 @@ window.addEventListener("click", function (e) {
   if (e.target === modal) closeContact();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const panel = document.getElementById("status-panel");
-  const text = document.getElementById("status-text");
+/* OUVERT / FERME */
+function checkStatus() {
+  const badge = document.getElementById("statusBadge");
+  const now = new Date();
+  const day = now.getDay(); // 0 dimanche
+  const hour = now.getHours() + now.getMinutes() / 60;
 
-  function isOpen() {
-    const d = new Date();
-    const day = d.getDay();
-    const t = d.getHours() * 60 + d.getMinutes();
+  let open = false;
 
-    if (day === 0) return false;
-    if (day === 1) return t >= 810 && t <= 1170;
-    if (day >= 2 && day <= 4) return (t >= 570 && t <= 720) || (t >= 810 && t <= 1170);
-    if (day === 5) return (t >= 570 && t <= 720) || (t >= 840 && t <= 1170);
-    if (day === 6) return (t >= 570 && t <= 720) || (t >= 810 && t <= 1170);
-    return false;
+  if (day >= 1 && day <= 4) {
+    open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
+  } else if (day === 5) {
+    open = (hour >= 9.5 && hour < 12) || (hour >= 14 && hour < 19.5);
+  } else if (day === 6) {
+    open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
   }
 
-  function update() {
-    if (isOpen()) {
-      panel.classList.add("open");
-      panel.classList.remove("closed");
-      text.textContent = "Ouvert";
-    } else {
-      panel.classList.add("closed");
-      panel.classList.remove("open");
-      text.textContent = "Fermé";
-    }
-  }
+  badge.classList.remove("loading", "open", "closed");
 
-  update();
-  setInterval(update, 60000);
-});
+  if (open) {
+    badge.classList.add("open");
+    badge.textContent = "🟢 Ouvert";
+  } else {
+    badge.classList.add("closed");
+    badge.textContent = "🔴 Fermé";
+  }
+}
+
+checkStatus();
+setInterval(checkStatus, 60000);

@@ -15,9 +15,9 @@
   <h1>Rafanis Service</h1>
 
   <!-- PANNEAU OUVERT / FERME -->
-  <div id="status" class="status-bar closed">
+  <div id="statusPanel" class="status-panel">
     <span class="dot"></span>
-    <span class="label">Fermé</span>
+    <span id="statusText">Chargement…</span>
   </div>
 
   <div class="actions">
@@ -56,7 +56,7 @@
 
 <section class="card">
   <h2>Horaires</h2>
-  <p class="center-text">
+  <p>
     Lundi : 13h30 – 19h30<br>
     Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
     <strong>Vendredi : 09h30 – 12h00 / 14h00 – 19h30</strong><br>
@@ -73,6 +73,17 @@
   </iframe>
 </section>
 
+<section class="card">
+  <h2>Avis clients</h2>
+  <div style="text-align:center;">
+    <a class="btn primary"
+       href="https://www.google.com/search?q=Rafanis+Service+Roubaix+avis"
+       target="_blank">
+      ⭐ Voir les avis Google
+    </a>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -81,7 +92,7 @@
 
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
-<!-- MODAL CONTACT (ORIGINAL) -->
+<!-- MODAL CONTACT -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
@@ -96,9 +107,7 @@
       <button type="submit">Envoyer</button>
     </form>
 
-    <p class="form-info">
-      📨 Message envoyé directement à Rafanis59r@gmail.com
-    </p>
+    <p class="form-info">📨 Message envoyé directement à Rafanis59r@gmail.com</p>
   </div>
 </div>
 

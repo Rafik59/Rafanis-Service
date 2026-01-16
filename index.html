@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Rafanis Service</title>
+  <title>Rafanis Service </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,12 +13,6 @@
   <img src="logo.jpeg" alt="Rafanis Service" class="logo">
 
   <h1>Rafanis Service</h1>
-
-  <!-- STATUT OUVERT / FERME -->
-  <div id="status" class="status-badge closed">
-    <span class="dot"></span>
-    <span class="text">Fermé</span>
-  </div>
 
   <div class="actions">
     <a class="btn primary" href="tel:+33780818301">📞 07 80 81 83 01</a>
@@ -32,14 +26,16 @@
   <a class="email" href="mailto:Rafanis59r@gmail.com">
     ✉️ Rafanis59r@gmail.com
   </a>
-</header>
 
-<!-- WHATSAPP BUTTON -->
-<a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service,%20j’ai%20une%20question."
-   class="whatsapp-btn"
-   target="_blank">
-  💬 WhatsApp
-</a>
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service,%20j’ai%20une%20question."
+     class="whatsapp-btn"
+     target="_blank"
+     aria-label="Contacter sur WhatsApp">
+    💬 WhatsApp
+  </a>
+
+</header>
 
 <main>
 
@@ -59,9 +55,7 @@
   <h2>Horaires</h2>
   <p>
     Lundi : 13h30 – 19h30<br>
-    Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
-    <strong>Vendredi : 09h30 – 12h00 / 14h00 – 19h30</strong><br>
-    Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
+    Mardi à Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
     Dimanche : Fermé
   </p>
 </section>
@@ -96,10 +90,11 @@
 
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
-<!-- MODAL CONTACT (ORIGINAL) -->
+<!-- MODAL CONTACT -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
+
     <h2>Nous contacter</h2>
 
     <form action="https://formspree.io/f/xaqqneve" method="POST">

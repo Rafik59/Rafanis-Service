@@ -22,7 +22,7 @@ function checkStatus() {
 
   let periods = [];
 
-  if (day === 1) periods = [[810, 1170]];
+  if (day === 1) periods = [[810, 1020]];
   if ([2,3,4,6].includes(day)) periods = [[570,720],[810,1170]];
   if (day === 5) periods = [[570,720],[840,1170]];
 
@@ -71,3 +71,4 @@ function checkStatus() {
 
 checkStatus();
 setInterval(checkStatus, 1000);
+

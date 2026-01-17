@@ -187,4 +187,12 @@ footer {
   cursor: pointer;
 }
 
+/* ===== CORRECTION TEXTE BOUTON iOS ===== */
+.contact-btn {
+  color: #000000 !important;   /* TEXTE BIEN NOIR */
+  opacity: 1 !important;
+  -webkit-text-fill-color: #000000; /* FIX SAFARI iOS */
+}
+
+
 

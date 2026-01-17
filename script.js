@@ -11,25 +11,49 @@ window.onclick = function (e) {
   if (e.target === modal) closeContact();
 };
 
-/* OUVERT / FERMÉ */
 function checkStatus() {
   const badge = document.getElementById("statusBadge");
   const now = new Date();
   const day = now.getDay();
-  const hour = now.getHours() + now.getMinutes() / 60;
+  const minutes = now.getHours() * 60 + now.getMinutes();
 
-  let open = false;
+  let periods = [];
 
   if (day >= 1 && day <= 4) {
-    open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
+    periods = [[570, 720], [810, 1170]];
   } else if (day === 5) {
-    open = (hour >= 9.5 && hour < 12) || (hour >= 14 && hour < 19.5);
+    periods = [[570, 720], [840, 1170]];
   } else if (day === 6) {
-    open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
+    periods = [[570, 720], [810, 1170]];
   }
 
-  badge.className = "status " + (open ? "open" : "closed");
-  badge.textContent = open ? "🟢 Ouvert" : "🔴 Fermé";
+  if (periods.length === 0) {
+    badge.className = "status closed";
+    badge.textContent = "🔴 Fermé";
+    return;
+  }
+
+  for (let [start, end] of periods) {
+    if (minutes >= start && minutes < end) {
+      if (end - minutes <= 15) {
+        badge.className = "status closing-soon";
+        badge.textContent = "🟠 Fermeture bientôt";
+      } else {
+        badge.className = "status open";
+        badge.textContent = "🟢 Ouvert";
+      }
+      return;
+    }
+
+    if (start - minutes > 0 && start - minutes <= 15) {
+      badge.className = "status opening-soon";
+      badge.textContent = "🔵 Ouverture bientôt";
+      return;
+    }
+  }
+
+  badge.className = "status closed";
+  badge.textContent = "🔴 Fermé";
 }
 
 checkStatus();

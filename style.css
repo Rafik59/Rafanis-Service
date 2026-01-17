@@ -184,3 +184,28 @@ footer {
   font-size: 22px;
   cursor: pointer;
 }
+
+/* ===== BOUTON MAIL ===== */
+.mail-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 26px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+
+  color: #ffffff !important;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mail-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}

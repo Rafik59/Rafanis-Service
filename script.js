@@ -1,4 +1,3 @@
-/* CONTACT */
 function openContact() {
   document.getElementById("contactModal").style.display = "block";
 }
@@ -7,11 +6,18 @@ function closeContact() {
   document.getElementById("contactModal").style.display = "none";
 }
 
-/* STATUS */
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("contactModal");
+  if (e.target === modal) {
+    closeContact();
+  }
+});
+
+/* OUVERT / FERME */
 function checkStatus() {
   const badge = document.getElementById("statusBadge");
   const now = new Date();
-  const day = now.getDay();
+  const day = now.getDay(); // 0 = dimanche
   const hour = now.getHours() + now.getMinutes() / 60;
 
   let open = false;
@@ -24,31 +30,16 @@ function checkStatus() {
     open = (hour >= 9.5 && hour < 12) || (hour >= 13.5 && hour < 19.5);
   }
 
-  badge.className = "status " + (open ? "open" : "closed");
-  badge.textContent = open ? "🟢 Ouvert" : "🔴 Fermé";
+  badge.classList.remove("loading", "open", "closed");
+
+  if (open) {
+    badge.classList.add("open");
+    badge.textContent = "🟢 Ouvert";
+  } else {
+    badge.classList.add("closed");
+    badge.textContent = "🔴 Fermé";
+  }
 }
 
 checkStatus();
 setInterval(checkStatus, 60000);
-
-/* ITINÉRAIRE INTELLIGENT */
-function openNavigation() {
-  const address = "16 Rue de Tourcoing 59100 Roubaix";
-  const ua = navigator.userAgent.toLowerCase();
-
-  if (/iphone|ipad|ipod/.test(ua)) {
-    if (confirm("Plans Apple ?")) {
-      window.location.href = `maps://?q=${encodeURIComponent(address)}`;
-    } else if (confirm("Google Maps ?")) {
-      window.location.href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
-    } else {
-      window.location.href = `https://waze.com/ul?q=${encodeURIComponent(address)}`;
-    }
-  } else {
-    if (confirm("Google Maps ?")) {
-      window.location.href = `https://www.google.com/maps?q=${encodeURIComponent(address)}`;
-    } else {
-      window.location.href = `https://waze.com/ul?q=${encodeURIComponent(address)}`;
-    }
-  }
-}

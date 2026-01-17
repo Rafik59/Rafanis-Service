@@ -18,17 +18,10 @@
 
   <div class="actions">
     <a class="btn primary" href="tel:+33780818301">📞 07 80 81 83 01</a>
-    <button class="btn outline" onclick="openMapChoice()">📍 Itinéraire</button>
+    <button class="btn outline" onclick="openNavigation()">📍 Itinéraire</button>
   </div>
 
   <a class="email" href="mailto:Rafanis59r@gmail.com">✉️ Rafanis59r@gmail.com</a>
-
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/33780818301"
-     class="whatsapp-btn"
-     target="_blank">
-    💬 WhatsApp
-  </a>
 </header>
 
 <main>
@@ -50,7 +43,7 @@
   <p>
     Lundi : 13h30 – 19h30<br>
     Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
-    <strong>Vendredi : 09h30 – 12h00 / 14h00 – 19h30</strong><br>
+    Vendredi : 09h30 – 12h00 / 14h00 – 19h30<br>
     Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
     Dimanche : Fermé
   </p>
@@ -70,12 +63,28 @@
   © 2026 Rafanis Service — 16 Rue de Tourcoing, 59100 Roubaix
 </footer>
 
-<!-- MODAL ITINÉRAIRE -->
-<div class="modal" id="mapModal">
+<!-- WHATSAPP FIXE -->
+<a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
+   class="whatsapp-btn"
+   target="_blank">
+  💬 WhatsApp
+</a>
+
+<!-- CONTACT -->
+<button class="contact-btn" onclick="openContact()">Nous contacter</button>
+
+<!-- MODAL CONTACT -->
+<div class="modal" id="contactModal">
   <div class="modal-content">
-    <span class="close" onclick="closeMap()">×</span>
-    <h2>Choisir l’application</h2>
-    <div id="mapButtons"></div>
+    <span class="close" onclick="closeContact()">×</span>
+    <h2>Nous contacter</h2>
+
+    <form action="https://formspree.io/f/xaqqneve" method="POST">
+      <input type="text" name="prenom" placeholder="Votre prénom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
   </div>
 </div>
 

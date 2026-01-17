@@ -14,23 +14,18 @@
 
   <h1>Rafanis Service</h1>
 
-  <div id="statusBadge" class="status loading">
-    Vérification…
-  </div>
+  <div id="statusBadge" class="status loading">Vérification…</div>
 
   <div class="actions">
     <a class="btn primary" href="tel:+33780818301">📞 07 80 81 83 01</a>
-    <a class="btn outline"
-       href="https://www.google.com/maps?q=16+Rue+de+Tourcoing+59100+Roubaix"
-       target="_blank">
-      📍 Itinéraire
-    </a>
+    <button class="btn outline" onclick="openMapChoice()">📍 Itinéraire</button>
   </div>
 
   <a class="email" href="mailto:Rafanis59r@gmail.com">
     ✉️ Rafanis59r@gmail.com
   </a>
 
+  <!-- WHATSAPP -->
   <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
      class="whatsapp-btn"
      target="_blank">
@@ -42,7 +37,7 @@
 
 <section class="card">
   <h2>Services</h2>
-  <ul>
+  <ul class="center-list">
     <li>Démarches administratives</li>
     <li>Photocopie & impression</li>
     <li>Accès Internet</li>
@@ -90,6 +85,7 @@
 
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
+<!-- MODAL CONTACT -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
@@ -99,6 +95,7 @@
       <input type="text" name="prenom" placeholder="Votre prénom" required>
       <input type="email" name="email" placeholder="Votre adresse email" required>
       <textarea name="message" placeholder="Votre message" required></textarea>
+
       <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
       <button type="submit">Envoyer</button>
     </form>
@@ -107,7 +104,15 @@
   </div>
 </div>
 
+<!-- MODAL ITINERAIRE -->
+<div class="modal" id="mapModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeMap()">×</span>
+    <h2>Choisir une application</h2>
+    <div id="mapButtons"></div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
-

@@ -74,11 +74,17 @@ h1 {
   color: #aee2ff;
 }
 
-/* ================= EMAIL ================= */
-.email {
+/* ================= EMAIL (BLANC PARTOUT) ================= */
+.email,
+.email:link,
+.email:visited,
+.email:hover,
+.email:active {
   display: block;
   margin-top: 15px;
-  color: #aee2ff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* ================= CARDS ================= */
@@ -128,11 +134,6 @@ footer {
   border-radius: 50px;
   font-weight: 700;
   z-index: 9999;
-
-  /* IMPORTANT POUR iOS */
-  opacity: 1;
-  -webkit-appearance: none;
-  appearance: none;
 }
 
 /* WhatsApp */
@@ -140,18 +141,13 @@ footer {
   bottom: 90px;
   background: #25D366;
   color: #000000;
-  -webkit-text-fill-color: #000000;
 }
 
 /* Nous contacter */
 .contact-btn {
   bottom: 20px;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
-
-  /* TEXTE BIEN NOIR PARTOUT */
   color: #000000;
-  -webkit-text-fill-color: #000000;
-
   border: none;
   font-size: 16px;
   box-shadow: 0 6px 20px rgba(0,114,255,0.6);
@@ -188,15 +184,3 @@ footer {
   font-size: 22px;
   cursor: pointer;
 }
-/* ================= EMAIL (FIX iOS DEFINITIF) ================= */
-.email,
-.email:link,
-.email:visited,
-.email:hover,
-.email:active {
-  color: #eaf3ff !important;              /* couleur forcée */
-  -webkit-text-fill-color: #eaf3ff !important; /* SAFARI iOS */
-  text-decoration: none !important;
-  font-weight: 500;
-}
-

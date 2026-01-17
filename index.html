@@ -23,7 +23,6 @@
       📞 07 80 81 83 01
     </a>
 
-    <!-- ITINÉRAIRE UNIVERSEL (PC / ANDROID / IOS) -->
     <a class="btn outline"
        href="https://www.google.com/maps/dir/?api=1&destination=16+Rue+de+Tourcoing+59100+Roubaix"
        target="_blank" rel="noopener">
@@ -32,63 +31,57 @@
   </div>
 
   <a href="mailto:Rafanis59r@gmail.com" class="mail-btn">
-  ✉️ Rafanis59r@gmail.com
-</a>
-
+    ✉️ Rafanis59r@gmail.com
+  </a>
 </header>
 
-<!-- WHATSAPP FIXE -->
 <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
    class="whatsapp-btn"
    target="_blank" rel="noopener">
   💬 WhatsApp
 </a>
 
-<!-- CONTACT FIXE -->
 <button class="contact-btn" onclick="openContact()">
   Nous contacter
 </button>
 
 <main>
+  <section class="card">
+    <h2>Services</h2>
+    <ul>
+      <li>Démarches administratives</li>
+      <li>Photocopie & impression</li>
+      <li>Accès Internet</li>
+      <li>Vente & réparation téléphones</li>
+      <li>Cartes SIM prépayées</li>
+      <li>Dépôt et retrait de colis</li>
+    </ul>
+  </section>
 
-<section class="card">
-  <h2>Services</h2>
-  <ul>
-    <li>Démarches administratives</li>
-    <li>Photocopie & impression</li>
-    <li>Accès Internet</li>
-    <li>Vente & réparation téléphones</li>
-    <li>Cartes SIM prépayées</li>
-    <li>Dépôt et retrait de colis</li>
-  </ul>
-</section>
+  <section class="card">
+    <h2>Horaires</h2>
+    <p>
+      Lundi : 13h30 – 19h30<br>
+      Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
+      Vendredi : 09h30 – 12h00 / 14h00 – 19h30<br>
+      Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
+      Dimanche : Fermé
+    </p>
+  </section>
 
-<section class="card">
-  <h2>Horaires</h2>
-  <p>
-    Lundi : 13h30 – 19h30<br>
-    Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
-    Vendredi : 09h30 – 12h00 / 14h00 – 19h30<br>
-    Samedi : 09h30 – 12h00 / 13h30 – 19h30<br>
-    Dimanche : Fermé
-  </p>
-</section>
-
-<section class="card">
-  <h2>Localisation</h2>
-  <iframe
-    src="https://maps.google.com/maps?q=16%20Rue%20de%20Tourcoing%2059100%20Roubaix&z=15&output=embed"
-    loading="lazy">
-  </iframe>
-</section>
-
+  <section class="card">
+    <h2>Localisation</h2>
+    <iframe
+      src="https://maps.google.com/maps?q=16%20Rue%20de%20Tourcoing%2059100%20Roubaix&z=15&output=embed"
+      loading="lazy">
+    </iframe>
+  </section>
 </main>
 
 <footer>
   © 2026 Rafanis Service — 16 Rue de Tourcoing, 59100 Roubaix
 </footer>
 
-<!-- MODAL CONTACT -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
@@ -98,7 +91,6 @@
       <input type="text" name="prenom" placeholder="Votre prénom" required>
       <input type="email" name="email" placeholder="Votre email" required>
       <textarea name="message" placeholder="Votre message" required></textarea>
-
       <button type="submit">Envoyer</button>
     </form>
   </div>
@@ -107,4 +99,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-

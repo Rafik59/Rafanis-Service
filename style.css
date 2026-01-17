@@ -1,18 +1,15 @@
-/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top, #0e4fa3, #020814);
   color: #eaf3ff;
 }
 
-/* ================= HERO ================= */
 .hero {
   min-height: 100vh;
   text-align: center;
@@ -31,7 +28,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* ================= STATUS ================= */
+/* STATUS */
 .status {
   padding: 14px 40px;
   border-radius: 50px;
@@ -49,7 +46,17 @@ h1 {
   color: #ffffff;
 }
 
-/* ================= ACTIONS ================= */
+.status.closing-soon {
+  background: #ffb020;
+  color: #4a2a00;
+}
+
+.status.opening-soon {
+  background: #3da9ff;
+  color: #001f3f;
+}
+
+/* BUTTONS */
 .actions {
   display: flex;
   justify-content: center;
@@ -74,20 +81,7 @@ h1 {
   color: #aee2ff;
 }
 
-/* ================= EMAIL (BLANC PARTOUT) ================= */
-.email,
-.email:link,
-.email:visited,
-.email:hover,
-.email:active {
-  display: block;
-  margin-top: 15px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* ================= CARDS ================= */
+/* CARDS */
 .card {
   width: min(92%, 900px);
   margin: 40px auto;
@@ -110,7 +104,6 @@ h1 {
   padding: 8px 0;
 }
 
-/* ================= MAP ================= */
 iframe {
   width: 100%;
   height: 300px;
@@ -118,14 +111,13 @@ iframe {
   border: none;
 }
 
-/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 30px;
   color: #8fbbe6;
 }
 
-/* ================= BOUTONS FIXES ================= */
+/* FIXED BUTTONS */
 .whatsapp-btn,
 .contact-btn {
   position: fixed;
@@ -136,30 +128,26 @@ footer {
   z-index: 9999;
 }
 
-/* WhatsApp */
 .whatsapp-btn {
   bottom: 90px;
   background: #25D366;
-  color: #000000;
+  color: #000;
 }
 
-/* Nous contacter */
 .contact-btn {
   bottom: 20px;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #000000;
+  color: #000;
   border: none;
   font-size: 16px;
-  box-shadow: 0 6px 20px rgba(0,114,255,0.6);
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.7);
-  z-index: 10000;
 }
 
 .modal-content {
@@ -185,27 +173,13 @@ footer {
   cursor: pointer;
 }
 
-/* ===== BOUTON MAIL ===== */
+/* MAIL */
 .mail-btn {
   display: inline-block;
   margin-top: 15px;
   padding: 12px 26px;
-
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(6px);
-
+  background: rgba(255,255,255,0.12);
   border-radius: 50px;
-  font-weight: 600;
-  font-size: 16px;
-
-  color: #ffffff !important;
-  text-decoration: none !important;
-  -webkit-text-fill-color: #ffffff !important;
-
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.mail-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.03);
+  color: #fff;
+  text-decoration: none;
 }

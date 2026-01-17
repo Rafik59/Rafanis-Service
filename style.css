@@ -8,37 +8,22 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: radial-gradient(circle at top, #0e4fa3, #020814);
   color: #eaf3ff;
-  min-height: 100vh;
 }
 
-/* HERO */
 .hero {
   min-height: 100vh;
   text-align: center;
   padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .logo {
   width: 220px;
-  height: 220px;
   border-radius: 50%;
-  background: #070f1f;
-  padding: 20px;
-  margin-bottom: 30px;
   box-shadow: 0 0 40px rgba(0,160,255,1);
 }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-/* STATUS */
 .status {
-  margin-bottom: 25px;
+  margin: 25px auto;
   padding: 12px 34px;
   border-radius: 50px;
   font-weight: bold;
@@ -46,88 +31,57 @@ body {
 
 .status.open {
   background: linear-gradient(135deg, #2aff7a, #00c853);
-  color: #003b1d;
 }
 
 .status.closed {
   background: linear-gradient(135deg, #ff4b4b, #c62828);
-  color: #fff;
 }
 
-/* BUTTONS */
 .actions {
   display: flex;
+  justify-content: center;
   gap: 15px;
-  margin-bottom: 15px;
 }
 
 .btn {
   padding: 14px 30px;
   border-radius: 50px;
-  text-decoration: none;
+  border: none;
   font-weight: bold;
 }
 
 .btn.primary {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #00182f;
 }
 
 .btn.outline {
   border: 2px solid #00c6ff;
+  background: transparent;
   color: #aee2ff;
 }
 
 .email {
+  display: block;
   margin-top: 10px;
-  color: #aee2ff;
 }
 
-/* CARDS */
 .card {
   width: min(92%, 900px);
   margin: 40px auto;
   padding: 35px;
   border-radius: 22px;
   background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(14px);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.card h2 {
-  margin-bottom: 25px;
-  color: #6ecbff;
-}
-
-/* SERVICES */
-.card ul {
+.center-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.card ul li {
-  text-align: center;
-  font-size: 18px;
-  padding: 8px 0;
+.center-list li {
+  padding: 10px 0;
 }
 
-/* HORAIRES — FIX DÉFINITIF */
-.card p.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-align: center;
-  font-size: 17px;
-  line-height: 1.9;
-}
-
-/* MAP */
 iframe {
   width: 100%;
   height: 300px;
@@ -135,75 +89,44 @@ iframe {
   border: none;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #8fbbe6;
-}
-
-/* CONTACT */
 .contact-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #00182f;
-  border: none;
-  padding: 14px 26px;
   border-radius: 50px;
+  padding: 14px 26px;
   font-weight: bold;
 }
 
-/* WHATSAPP */
 .whatsapp-btn {
   position: fixed;
   bottom: 90px;
   right: 20px;
   background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #002b18;
-  padding: 14px 22px;
   border-radius: 30px;
+  padding: 14px 22px;
   font-weight: bold;
 }
 
-/* MODAL */
 .modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.7);
 }
 
 .modal-content {
   background: #070f1f;
-  width: min(90%, 420px);
-  margin: 12vh auto;
-  padding: 28px;
+  margin: 15vh auto;
+  padding: 25px;
+  width: min(90%, 400px);
   border-radius: 22px;
   text-align: center;
 }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  margin-bottom: 14px;
-  padding: 12px;
-  border-radius: 12px;
-  border: none;
-}
-
-.modal-content button {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  border: none;
-  padding: 14px 26px;
-  border-radius: 50px;
-  font-weight: bold;
-}
-
 .close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
+  float: right;
+  font-size: 24px;
   cursor: pointer;
 }

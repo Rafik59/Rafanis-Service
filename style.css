@@ -188,3 +188,19 @@ footer {
   font-size: 22px;
   cursor: pointer;
 }
+/* ===== CORRECTION LIEN EMAIL ===== */
+.email {
+  color: #eaf3ff;              /* même couleur que le texte */
+  text-decoration: none;       /* enlever le soulignement */
+  font-weight: 500;
+}
+
+.email:visited {
+  color: #eaf3ff;
+}
+
+.email:hover {
+  color: #6ecbff;              /* léger bleu au survol (optionnel) */
+}
+
+

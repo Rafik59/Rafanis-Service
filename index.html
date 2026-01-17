@@ -14,14 +14,31 @@
 
   <h1>Rafanis Service</h1>
 
-  <div id="statusBadge" class="status">Vérification…</div>
+  <!-- PANNEAU OUVERT / FERME -->
+  <div id="statusBadge" class="status loading">
+    Vérification…
+  </div>
 
   <div class="actions">
     <a class="btn primary" href="tel:+33780818301">📞 07 80 81 83 01</a>
-    <button class="btn outline" onclick="openNavigation()">📍 Itinéraire</button>
+    <a class="btn outline"
+       href="https://www.google.com/maps?q=16+Rue+de+Tourcoing+59100+Roubaix"
+       target="_blank">
+      📍 Itinéraire
+    </a>
   </div>
 
-  <a class="email" href="mailto:Rafanis59r@gmail.com">✉️ Rafanis59r@gmail.com</a>
+  <a class="email" href="mailto:Rafanis59r@gmail.com">
+    ✉️ Rafanis59r@gmail.com
+  </a>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
+     class="whatsapp-btn"
+     target="_blank">
+    💬 WhatsApp
+  </a>
+
 </header>
 
 <main>
@@ -40,7 +57,7 @@
 
 <section class="card">
   <h2>Horaires</h2>
-  <p>
+  <p class="center">
     Lundi : 13h30 – 19h30<br>
     Mardi à Jeudi : 09h30 – 12h00 / 13h30 – 19h30<br>
     Vendredi : 09h30 – 12h00 / 14h00 – 19h30<br>
@@ -57,23 +74,26 @@
   </iframe>
 </section>
 
+<section class="card">
+  <h2>Avis clients</h2>
+  <div style="text-align:center;">
+    <a class="btn primary"
+       href="https://www.google.com/search?q=Rafanis+Service+Roubaix+avis"
+       target="_blank">
+      ⭐ Voir les avis Google
+    </a>
+  </div>
+</section>
+
 </main>
 
 <footer>
   © 2026 Rafanis Service — 16 Rue de Tourcoing, 59100 Roubaix
 </footer>
 
-<!-- WHATSAPP FIXE -->
-<a href="https://wa.me/33780818301?text=Bonjour%20Rafanis%20Service"
-   class="whatsapp-btn"
-   target="_blank">
-  💬 WhatsApp
-</a>
-
-<!-- CONTACT -->
 <button class="contact-btn" onclick="openContact()">Nous contacter</button>
 
-<!-- MODAL CONTACT -->
+<!-- MODAL -->
 <div class="modal" id="contactModal">
   <div class="modal-content">
     <span class="close" onclick="closeContact()">×</span>
@@ -81,10 +101,14 @@
 
     <form action="https://formspree.io/f/xaqqneve" method="POST">
       <input type="text" name="prenom" placeholder="Votre prénom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
+      <input type="email" name="email" placeholder="Votre adresse email" required>
       <textarea name="message" placeholder="Votre message" required></textarea>
+
+      <input type="hidden" name="_subject" value="Nouveau message - Rafanis Service">
       <button type="submit">Envoyer</button>
     </form>
+
+    <p class="form-info">📨 Message envoyé directement à Rafanis59r@gmail.com</p>
   </div>
 </div>
 
